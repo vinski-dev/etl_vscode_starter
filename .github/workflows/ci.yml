@@ -7,7 +7,7 @@ on:
     branches: ["main"]
 
 jobs:
-  test:
+  lint-and-test:
     runs-on: windows-latest
 
     steps:
@@ -28,6 +28,14 @@ jobs:
           pip install -r requirements.txt
           pip install pytest
 
-      # Run tests
+      # Run Black (check formatting only, don’t reformat automatically)
+      - name: Run Black
+        run: black --check .
+
+      # Run Flake8 (linting)
+      - name: Run Flake8
+        run: flake8 .
+
+      # Run pytest
       - name: Run pytest
         run: pytest -v
