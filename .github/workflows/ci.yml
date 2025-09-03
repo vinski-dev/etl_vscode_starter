@@ -30,7 +30,7 @@ jobs:
 
       # Run Black (check formatting only, don’t reformat automatically)
       - name: Run Black
-        run: black --check .
+        run: black --check  --diff .
 
       # Run Flake8 (linting)
       - name: Run Flake8
