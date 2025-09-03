@@ -1,0 +1,75 @@
+orders:
+  input_csv: "data/orders.csv"
+  output_csv: "out/clean_orders.csv"
+  columns:
+    ["order_id", "customer_id", "order_status", "order_purchase_timestamp"]
+  rename_map:
+    order_status: "status"
+    order_purchase_timestamp: "order_date"
+  datetime_cols: ["order_date"]
+  strip_cols: ["order_id", "customer_id", "status"]
+  dropna_cols: ["order_id", "customer_id", "order_date"]
+
+order_items:
+  input_csv: "data/order_items.csv"
+  output_csv: "out/clean_order_items.csv"
+  columns: ["order_id", "product_id", "price", "freight_value"]
+  rename_map:
+    freight_value: "shipping_cost"
+  numeric_cols: ["price", "shipping_cost"]
+  strip_cols: ["order_id", "product_id"]
+  dropna_cols: ["order_id", "product_id", "price"]
+
+customers:
+  input_csv: "data/customers.csv"
+  output_csv: "out/clean_customers.csv"
+  columns: ["customer_id", "customer_city", "customer_state"]
+  rename_map:
+    customer_city: "location_city"
+    customer_state: "location_state"
+  strip_cols: ["customer_id", "location_city", "location_state"]
+  dropna_cols: ["customer_id"]
+
+products:
+  input_csv: "data/products.csv"
+  output_csv: "out/clean_products.csv"
+  columns:
+    [
+      "product_id",
+      "product_category_name",
+      "product_weight_g",
+      "product_length_cm",
+      "product_height_cm",
+      "product_width_cm",
+    ]
+  rename_map:
+    product_category_name: "category"
+    product_weight_g: "weight_g"
+    product_length_cm: "length_cm"
+    product_height_cm: "height_cm"
+    product_width_cm: "width_cm"
+  numeric_cols: ["weight_g", "length_cm", "height_cm", "width_cm"]
+  strip_cols: ["product_id", "category"]
+  dropna_cols: ["product_id"]
+
+sellers:
+  input_csv: "data/sellers.csv"
+  output_csv: "out/clean_sellers.csv"
+  columns: ["seller_id", "seller_city", "seller_state"]
+  rename_map:
+    seller_city: "location_city"
+    seller_state: "location_state"
+  strip_cols: ["seller_id", "location_city", "location_state"]
+  dropna_cols: ["seller_id"]
+
+reviews:
+  input_csv: "data/reviews.csv"
+  output_csv: "out/clean_reviews.csv"
+  columns: ["review_id", "order_id", "review_score", "review_creation_date"]
+  rename_map:
+    review_score: "score"
+    review_creation_date: "timestamp"
+  datetime_cols: ["timestamp"]
+  numeric_cols: ["score"]
+  strip_cols: ["review_id", "order_id"]
+  dropna_cols: ["review_id", "order_id"]
