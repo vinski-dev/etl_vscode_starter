@@ -3,7 +3,6 @@
 A simple **YAML-driven ETL pipeline** built in Python, designed for learning and quick prototyping.  
 It demonstrates how to extract, transform, and load CSV data into cleaned datasets using a **configurable pipeline**.
 
----
 
 ## 📂 Project Structure
 
@@ -16,7 +15,6 @@ etl_vscode_starter/
 ├── requirements.txt # Python dependencies
 └── README.md # Project documentation
 
----
 
 ## ⚙️ Features
 
@@ -31,12 +29,10 @@ etl_vscode_starter/
   - Launch config (`F5`)
   - Custom task runner (`Run ETL`)
 
----
 
 ## 🚀 Setup Instructions
 
 ### 1. Clone this repo
-
 ```bash
 git clone https://github.com/vinski-dev/etl_vscode_starter.git
 cd etl_vscode_starter
@@ -55,7 +51,6 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 🗂️ Data
-
 Put raw CSV files into the data/ folder:
 
 orders.csv
@@ -114,13 +109,13 @@ YAML (Red Hat)
 Extend etl_config.yaml to handle more datasets
 Add schema validation with pytest
 Load cleaned data into a database (e.g., Postgres, BigQuery, Snowflake)
-```
+
 
 📄 License
 
 MIT License.
 Feel free to fork, modify, and use for your own projects.
 
----
 
-Would you like me to also **add this README.md directly into your project folder (so you can commit & push right away)**, or do you just want the scaffold text here to copy-paste?
+
+
