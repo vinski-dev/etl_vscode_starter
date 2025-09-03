@@ -1,0 +1,7 @@
+flake8
+black
+pandas
+pytest
+sqlalchemy
+debugpy 
+pyarrow
