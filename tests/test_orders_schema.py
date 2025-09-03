@@ -1,9 +1,12 @@
 import pandas as pd
 
+
 def assert_string_column(series):
-    assert pd.api.types.is_object_dtype(series) or pd.api.types.is_string_dtype(series), \
-        f"Column {series.name} is not string-like (got {series.dtype})"
-    
+    assert pd.api.types.is_object_dtype(series) or pd.api.types.is_string_dtype(
+        series
+    ), f"Column {series.name} is not string-like (got {series.dtype})"
+
+
 def test_orders_schema_and_types():
     # Load cleaned orders
     df = pd.read_csv("out/clean_orders.csv")
@@ -13,7 +16,7 @@ def test_orders_schema_and_types():
         "order_id": "object",
         "customer_id": "object",
         "status": "object",
-        "order_date": "datetime64[ns]"
+        "order_date": "datetime64[ns]",
     }
 
     # Check all expected columns exist

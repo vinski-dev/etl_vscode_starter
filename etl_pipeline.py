@@ -1,6 +1,7 @@
 import pandas as pd
 import yaml
 
+
 class ETLPipeline:
     def __init__(self, config: dict):
         self.config = config
