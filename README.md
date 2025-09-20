@@ -7,12 +7,19 @@ It demonstrates how to extract, transform, and load CSV data into cleaned datase
 ## 📂 Project Structure
 
 etl_vscode_starter/
+
 ├── .vscode/ # VSCode settings (launch, tasks, settings)
+
 ├── data/ # Raw CSV input files
+
 ├── out/ # Cleaned CSV outputs (auto-generated)
+
 ├── etl_config.yaml # ETL rules (columns, renames, types)
+
 ├── etl_pipeline.py # Python ETL runner
+
 ├── requirements.txt # Python dependencies
+
 └── README.md # Project documentation
 
 
